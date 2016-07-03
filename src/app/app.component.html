@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-fluid">
+
+  <AppStockNav></AppStockNav>
+
+  <AppAddStock></AppAddStock>
+
+  <TotalStock [stocksData]="stocksData"></TotalStock>
+
+  <ListStocks (showArticlesEvt)="setShowArticlesFor($event)"></ListStocks>
+
+  <NewsStocks [showArticlesFor]="showArticlesFor"></NewsStocks>
+
+</div>
