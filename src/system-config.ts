@@ -38,9 +38,9 @@ const barrels: string[] = [
   'app/components/news-stocks',
   'app/components/stock-nav',
   'app/components/total-stock',
-  'app/components/stock-full',
-  'app/components/stock-list',
-  'app/components/stock-search',
+  // 'app/components/stock-full',
+  // 'app/components/stock-list',
+  // 'app/components/stock-search',
   /** @cli-barrel */
 ];
 
