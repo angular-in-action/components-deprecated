@@ -12,5 +12,4 @@ export class StockNavComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
