@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'AppStockNav',
+  selector: 'StockNav',
   templateUrl: 'stock-nav.component.html',
   styleUrls: ['stock-nav.component.css']
 })

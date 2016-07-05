@@ -4,7 +4,7 @@ import {Stock} from '../../models/Stock';
 
 @Component({
   moduleId: module.id,
-  selector: 'AppAddStock',
+  selector: 'AddStock',
   templateUrl: 'add-stock.component.html',
   styleUrls: ['add-stock.component.css']
 })
@@ -14,6 +14,7 @@ export class AddStockComponent implements OnInit {
   public stock: Stock;
 
   constructor(public stocksService:StocksService) { 
+  // constructor( ) { 
     this.stock = new Stock();
   };
 

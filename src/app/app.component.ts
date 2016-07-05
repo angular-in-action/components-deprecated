@@ -11,7 +11,7 @@ import {StocksService} from './services/stocks.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-root',
+  selector: 'AppRoot',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   providers: [HTTP_PROVIDERS, StocksService],

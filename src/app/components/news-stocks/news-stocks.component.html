@@ -1,13 +1,13 @@
-  <!-- Stories -->
-  <div class="row" *ngIf="articles">
-    <h2>Articles</h2>
-    <div class="col-md-12">
-      <ol>
-        <li *ngFor="let article of articles; let i=index">
-          <!-- <a href="{{article.source.enriched.url.url}}">{{article.source.enriched.url.title}}</a> -->
-          <dt>{{article.title}}</dt>
-          <dd>{{article.body}}</dd>
-        </li>
-      </ol>
-    </div>
+<!-- Stories -->
+<div class="row" *ngIf="articles">
+  <h2>Articles</h2>
+  <div class="col-md-12">
+    <ol>
+      <li *ngFor="let article of articles; let i=index">
+        <!-- <a href="{{article.source.enriched.url.url}}">{{article.source.enriched.url.title}}</a> -->
+        <dt>{{article.title}}</dt>
+        <dd>{{article.body}}</dd>
+      </li>
+    </ol>
   </div>
+</div>

@@ -12,9 +12,9 @@ import {
 
 import { NewsStocksComponent } from './news-stocks.component';
 
-describe('Component: NewsStocks', () => {
-  it('should create an instance', () => {
-    let component = new NewsStocksComponent();
-    expect(component).toBeTruthy();
-  });
-});
+// describe('Component: NewsStocks', () => {
+//   it('should create an instance', () => {
+//     let component = new NewsStocksComponent();
+//     expect(component).toBeTruthy();
+//   });
+// });
