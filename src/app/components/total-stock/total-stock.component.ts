@@ -1,5 +1,4 @@
-// import { Component, OnInit } from '@angular/core';
-import {Component, EventEmitter, Input, OnChanges, SimpleChange, OnInit, DoCheck} from '@angular/core'
+import {Component, Input, OnInit} from '@angular/core'
 
 @Component({
   moduleId: module.id,
@@ -8,8 +7,7 @@ import {Component, EventEmitter, Input, OnChanges, SimpleChange, OnInit, DoCheck
   styleUrls: ['total-stock.component.css']
   // inputs: ['stocksData']
 })
-// export class TotalStockComponent implements OnChanges, DoCheck {
-export class TotalStockComponent implements DoCheck {
+export class TotalStockComponent implements OnInit {
 
   @Input() public stocksData: Array<any>;
   private prevLength: number = 0;
@@ -18,21 +16,8 @@ export class TotalStockComponent implements DoCheck {
 
   constructor() {}
 
-  // TODO: Doesn't catch the change as only looks at the reference,
-  //  not the details of the object. See if there is some way 
-  //  in the parent to make this a new object each time so
-  //  ngOnChanges does catch it. Perhaps bring in immutable.js
-  //  which would give a way to demonstrate the OnPush change detection
-  //  strategy.
-  // ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
-  //   console.log("TotalStock OnChanges", changes.stocksData)
-  // }
-
-  // Can catch the changes with specific coding to find it
-  ngDoCheck() {
-    if (this.stocksData.length && this.stocksData.length !== this.prevLength) {
-      this.computeTotals()
-    }
+  ngOnInit() {
+    this.computeTotals();
   }
 
   computeTotals() {
@@ -42,5 +27,4 @@ export class TotalStockComponent implements DoCheck {
       this.totalValue += item.own * item.lastTradePriceOnly;
     })
   }
-
 }
