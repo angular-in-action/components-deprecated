@@ -28,10 +28,10 @@ export class StocksService  {
 
   addStock(stock) {
   	if( stock ) {
-	  this._stocksList.push(stock);
-	} else {
-	  console.log("addStock, no stock")
-	}
+	    this._stocksList.push(stock);
+	  } else {
+	    console.log("addStock, no stock")
+	  }
   }
 
   removeStock(symbol:string) {
@@ -56,7 +56,6 @@ export class StocksService  {
     }
 
     let params = new URLSearchParams();
-    // TODO: 7/2/16: need to get the following to work
     params.set('symbols', stocksSymbols.toString());
 
     return this.http.get("http://localhost:8080/api/snapshot", {search: params})
@@ -64,8 +63,6 @@ export class StocksService  {
       .map(x => x.filter(y => y.name)) // Remove invalid stocks (no name)
       .map((x) => { 
         // Add "own" to what has been returned. 
-        // not great to loop in a loop, probably should make the
-        //  _stocksList available as a stream to keep things consistent
         for (var i = 0; i < x.length; i++ ) {
           for (var j = 0; j < this._stocksList.length; j++ ) {
             if (this._stocksList[j].symbol === x[i].symbol) {
