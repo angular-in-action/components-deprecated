@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, DoCheck, SimpleChange, Input, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, DoCheck, Output} from '@angular/core';
 import {StocksService} from '../../services/stocks.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {StocksService} from '../../services/stocks.service';
 export class ListStocksComponent implements OnInit, DoCheck {
 
 
-  @Output() public showArticlesEvt: EventEmitter<Object> = new EventEmitter();
+  @Output() public showArticlesEvt: EventEmitter<string> = new EventEmitter();
 
   public stocksData: Array<Object> = [];
   public prevStocksLength: number = -1;
