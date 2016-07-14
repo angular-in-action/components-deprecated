@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http, URLSearchParams} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -15,13 +15,13 @@ export class StocksService  {
     { symbol: 'AAPL', own: 301 }
   ]
 
-  // constructor(public http: Http) {
   constructor(public http: Http) {
     this.defaultStocks.forEach((item) => {
       this.addStock(item);
     })
   }
   
+  // return the current stock list
   getStocks() {
     return this._stocksList;
   }
@@ -40,7 +40,8 @@ export class StocksService  {
     })
     this._stocksList.splice(idx, 1);
   }
-  
+
+  // Make a call to the API to get info about the current stock list
   snapshot():any {
     // create a list of symbols needed to send to the API
     var stocksSymbols = this.getStocks().map((stock) => {
@@ -76,17 +77,5 @@ export class StocksService  {
       // TODO: The following doesn't actually work, just results in an error being thrown
       // .catch(() => Observable.of([]))
   }
-
-
 }
 
-
-// import { Injectable } from '@angular/core';
-
-// @Injectable()
-// export class StocksService {
-
-//   constructor() {}
-
-// }
-//a simple service
