@@ -1,4 +1,3 @@
-// import { Component } from '@angular/core';
 import {Component, AfterViewInit, AfterViewChecked, ViewChild} from '@angular/core'
 import {HTTP_PROVIDERS} from '@angular/http';
 import {StockNavComponent} from './components/stock-nav/stock-nav.component';
@@ -7,7 +6,6 @@ import {TotalStockComponent} from './components/total-stock/total-stock.componen
 import {ListStocksComponent} from './components/list-stocks/list-stocks.component';
 import {NewsStocksComponent} from './components/news-stocks/news-stocks.component';
 import {StocksService} from './services/stocks.service';
-
 
 @Component({
   moduleId: module.id,
