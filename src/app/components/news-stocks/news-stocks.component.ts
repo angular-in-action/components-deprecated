@@ -1,5 +1,3 @@
-// import { Component, OnInit, Input } from '@angular/core';
-
 import {Component, EventEmitter, Input, OnChanges, SimpleChange} from '@angular/core';
 import {ArticleService} from '../../services/article-service.service';
 
@@ -18,7 +16,6 @@ export class NewsStocksComponent {
 
   constructor(public articleService:ArticleService) { };
 
-  // ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
   ngOnChanges(changes) {
     if ( changes.showArticlesFor && changes.showArticlesFor.currentValue !== '') {
       var currSymbol = changes.showArticlesFor;
@@ -28,7 +25,6 @@ export class NewsStocksComponent {
     }
   }
 
-  //TODO: Bring over the call to the service to get the ListStocks
   private fetchArticles(symbol) {
     this.articleService.fetch(symbol)
       .subscribe(
@@ -44,7 +40,4 @@ export class NewsStocksComponent {
       }
       )
   }  
-
-
-
 }

@@ -24,15 +24,8 @@ export class AppComponent {
 
   constructor(){}
 
-  // TODO: Add something here to get the children of the ListStocks component so
-  // we can get the total of the stocks owned. 
-  // Not sure, but might need to turn the individual lines of output stock into 
-  //   components of their own so we can get them. 
-  // 5/3/16: Can read down into ListStocks.stocksData and set it here so we 
-  //  get the numbers when it changes. 
   ngAfterViewInit() {
     setTimeout( () => {
-      // NOTE: console.log("this._listStocks empty to begin", this._listStocks.stocksData)
       this.stocksData = this._listStocks.stocksData
     },0)
   }
@@ -40,22 +33,5 @@ export class AppComponent {
   setShowArticlesFor(evt) {
     this.showArticlesFor = evt;
   }
-
-  // TODO: Look at this again as I think it caused problems -- see what problems it caused
-  //  and figured out when you would/wouldn't use it. 
-  ngAfterViewChecked() {
-    // console.log("ngAfterViewChecked")
-    // setTimeout(() => {
-    //   this.stocksData = this._listStocks.getTotal()
-    //   console.log("this._listStocks", this.stocksData)
-    // }, 0)
-    // console.log("afterViewChecked");
-    // console.log("this._listStocks after check", this._listStocks)
-    // setTimeout( () => {
-    //   this.stocksData = this._listStocks.stocksData
-    // },0)
-  }
-
-
 
 }

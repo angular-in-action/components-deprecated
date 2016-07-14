@@ -14,7 +14,6 @@ export class AddStockComponent implements OnInit {
   public stock: Stock;
 
   constructor(public stocksService:StocksService) { 
-  // constructor( ) { 
     this.stock = new Stock();
   };
 
