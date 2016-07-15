@@ -10,7 +10,6 @@ import {Component, Input, OnChanges, SimpleChange} from '@angular/core'
 export class TotalStockComponent implements OnChanges {
 
   @Input() public stocksData: Array<any>;
-  private prevLength: number = 0;
   public totalShares: number = 0; 
   public totalValue: number = 0;
 
