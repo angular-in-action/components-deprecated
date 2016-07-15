@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, SimpleChange, OnInit, DoCheck} from '@angular/core'
+import {Component, Input, OnChanges, SimpleChange} from '@angular/core'
 
 @Component({
   moduleId: module.id,
@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnChanges, SimpleChange, OnInit, DoCheck
   styleUrls: ['total-stock.component.css']
   // inputs: ['stocksData']
 })
-export class TotalStockComponent implements DoCheck {
+export class TotalStockComponent implements OnChanges {
 
   @Input() public stocksData: Array<any>;
   private prevLength: number = 0;
@@ -16,10 +16,9 @@ export class TotalStockComponent implements DoCheck {
 
   constructor() {}
 
-  // Can catch the changes with specific coding to find it
-  ngDoCheck() {
-    if (this.stocksData.length && this.stocksData.length !== this.prevLength) {
-      this.computeTotals()
+  ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
+    if( changes['stocksData'] ) {
+       this.computeTotals()
     }
   }
 
@@ -30,5 +29,4 @@ export class TotalStockComponent implements DoCheck {
       this.totalValue += item.own * item.lastTradePriceOnly;
     })
   }
-
 }
